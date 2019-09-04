@@ -3,21 +3,16 @@ package transport;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Main
-{
-        public static void printVehicles(ArrayList<AbstractVehicle> vehicles, CheckVehicle tester)
-    {
-        for (AbstractVehicle v : vehicles)
-        {
-            if (tester.test(v))
-            {
+public class Main {
+    public static void printVehicles(ArrayList<AbstractVehicle> vehicles, CheckVehicle tester) {
+        for (AbstractVehicle v : vehicles) {
+            if (tester.test(v)) {
                 System.out.println(v.getName() + " " + v.getFuelLevel());
             }
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Part 1 Interfaces
 
         Horse seabiscuit = new Horse("Seabiscuit");
@@ -26,16 +21,21 @@ public class Main
 
         seabiscuit.eat(10);
         affirmed.eat(25);
+
+        // you can do a loop like below, OR you can just type out .move 3 times.
+        // for (int i = 1; i <= 3; i++){
+        // seabiscuit.move()
+        // }
+
         seabiscuit.move();
         seabiscuit.move();
         seabiscuit.move();
         System.out.println("Seabiscuit's fuel level " + seabiscuit.getFuelLevel());
         System.out.println();
 
-
         // Part 2 Abstract Classes
 
-        System.out.println("*** From Abstract Class");
+        System.out.println("*** From Abstract Class ***");
         HorseFromVehicle secretariat = new HorseFromVehicle("Secretariat", 10);
         secretariat.addFuel(10);
         System.out.println("Secretariat's fuel level " + secretariat.getFuelLevel());
@@ -46,14 +46,12 @@ public class Main
         eclipse.move(10);
         System.out.println("Eclipse's fuel leve " + eclipse.getFuelLevel());
 
-
         Auto vw = new Auto(1, "EuroVan", 2000);
         Auto toyota = new Auto(10, "Tundra", 1998);
-        Auto honda = new Auto (5, "Accord", 2003);
+        Auto honda = new Auto(5, "Accord", 2003);
         vw.move();
         vw.move(5);
         System.out.println(vw.model + " fuel level " + vw.getFuelLevel());
-
 
         // Part 3 Combining classes
 
@@ -72,7 +70,6 @@ public class Main
         System.out.println("*** The List ***");
         System.out.println(myList.toString());
         System.out.println();
-
 
         // Part 4 Lambda Expressions
 

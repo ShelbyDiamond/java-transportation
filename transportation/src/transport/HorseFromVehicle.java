@@ -2,7 +2,7 @@ package transport;
 
 public class HorseFromVehicle extends AbstractVehicle
 {
-    public String name;
+    private String name;
 
     public HorseFromVehicle(String name, int fuel)
     {
